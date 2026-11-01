@@ -8,18 +8,20 @@
 </head>
 <body>
     <h3>Register user form</h3>
-    <label >Firs tname: </label><br>
-    <input type="text"><br><br>
-    <label >Last name: </label><br>
-    <input type="text"><br><br>
-    <label >Identification number: </label><br>
-    <input type="text"><br><br>
-    <label >Mobile phone: </label><br>
-    <input type="text"><br><br>
-    <label >E-mail: </label><br>
-    <input type="text"><br><br>
-    <label >Password: </label><br>
-    <input type="text"><br><br>
-    <button>Register</button>
+    <form name="register-form" action="signup.php" method="post">
+        <label >Firs name: </label><br>
+        <input type="text" name="fname" required><br><br>
+        <label >Last name: </label><br>
+        <input type="text" name="lname"><br><br>
+        <label >Identification number: </label><br>
+        <input type="text" name="idnumber"required><br><br>
+        <label >Mobile phone: </label><br>
+        <input type="text" name="mphone" required><br><br>
+        <label >E-mail: </label><br>
+        <input type="email" name="email" placeholder="@gmail.com" required><br><br>
+        <label >Password: </label><br>
+        <input type="password" name= "pswd" required><br><br>
+        <button>Register</button>
+    </form>
 </body>
 </html>
