@@ -16,8 +16,8 @@
 
 <body>
     <center>
-    <?php echo $_SESSION['user_firstname']." ". $_SESSION['user_lastname']; ?>
-    <h3>Welcome to Main Store</h3> | <a href="logout.php">Logout</a>
+        <?php echo $_SESSION['user_firstname']." ". $_SESSION['user_lastname']; ?>
+        <h3>Welcome to Main Store</h3> | <a href="logout.php">Logout</a>
     <center>
 </body>
 
