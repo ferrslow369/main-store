@@ -7,7 +7,7 @@
 
     //Get data from users table
     $sql="  
-        select	
+        SELECT	
             id,
             firstname || ' ' || lastname as fullname,
             email,
@@ -15,8 +15,9 @@
             status,
             case when status = true then 'Active' else 'Inactive' end as status,
             url_photo
-        from
+        FROM
             users
+        ORDER BY id
     ";
     $res = pg_query($local_conn, $sql);
 ?>
@@ -26,8 +27,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Store - List Users</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 </head>
     <body>
         <table class="table table-striped">
@@ -50,12 +54,15 @@
                     <td><?= $row['mobile_phone']?></td>
                     <td><?= $row['status']?></td>
                     <td >
-                        <a href= "#"> 
+                        <!-- edit user -->
+                        <a href= "update_user.php?userID=<?$row['id']?>"> 
                             <img src = "icons/pencil.png" alt="Edit user" width = "20">
                         </a>
+                        <!-- search user -->
                         <a href= "#">
                             <img src = "icons/search.png" alt="Search user" width = "20">
                         </a>
+                        <!-- delete user -->
                         <a href= "delete_user.php.?userID=<?= $row['id']?>">
                             <img src = "icons/trash.png" alt="Delete user" width = "20">
                         </a>
