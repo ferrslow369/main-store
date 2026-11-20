@@ -1,5 +1,6 @@
 <?php
 //get database  connection
+
 include('../settings/database.php');
 
 session_start();

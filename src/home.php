@@ -5,6 +5,7 @@
         exit();
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +15,13 @@
     <title>Document</title>
 </head>
 
-<body>
-    <center>
-        <?php echo $_SESSION['user_firstname']." ". $_SESSION['user_lastname']; ?>
-        <h3>Welcome to Main Store</h3> | <a href="logout.php">Logout</a>
-    <center>
-</body>
+    <body>
+        <center>
+            <?php echo $_SESSION['user_firstname']." ". $_SESSION['user_lastname']; ?>
+            <h3>Welcome to Main Store</h3> | <a href="logout.php">Logout</a>
+        <center>
+        Menu:
+            <a href = "list_users.php">List users</a>
+    </body>
 
 </html>
